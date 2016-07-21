@@ -64,12 +64,10 @@ npm test
 npm run cover
 ```
 
-You have to create a file named ```config.json``` in the ```test``` folder.
-```json
-{
-  "id": "YOUR_CLIENT_ID",
-  "secret": "YOUR_SECRET_ID"
-}
+To run the test you have to define two env variables:
+```bash
+export CLIENT_ID=YOUR_CLIENT_ID
+export SECRET_ID=YOUR_SECRET_ID
 ```
 
 ## Contributing

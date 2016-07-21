@@ -1,6 +1,5 @@
 const expect	= require('chai').expect;
 const SC		= require('../src/main.js');
-const client	= require('./config.json');
 
 describe('soundcloud', () => {
 	describe('init method must trhow errors', () => {
@@ -23,9 +22,12 @@ describe('soundcloud', () => {
 
 	describe('get track informations', () => {
 		before(() => {
+			if (process.env.SC_CLIENT_ID === undefined || process.env.SC_CLIENT_SECRET) {
+				throw new Error('You have to define env variables SC_CLIENT_ID and SC_CLIENT_SECRET');
+			}
 			SC.init({
-				id:		client.id,
-				secret:	client.secret
+				id:		process.env.SC_CLIENT_ID,
+				secret:	process.env.SC_CLIENT_SECRET
 			});
 		});
 
