@@ -16,6 +16,7 @@
   },
   "keywords": [
     "soundcloud",
+	"soundcloud-node-es6",
     "node-soundcloud",
     "soundcloud-node",
     "music"
